@@ -9,7 +9,7 @@ const App = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/v1/todo')  
+    axios.get('/api/v1/todo')  
       .then((response) => {
         setTodos(response.data);
       })
@@ -19,7 +19,7 @@ const App = () => {
   }, []);
 
   const addTodo = (newTodo) => {
-    axios.post('http://localhost:5000/api/v1/todo', { title: newTodo })  
+    axios.post('/api/v1/todo', { title: newTodo })  
       .then((response) => {
         setTodos([...todos, response.data]);
       })
@@ -29,7 +29,7 @@ const App = () => {
   };
 
   const editTodo = (id, newText) => {
-    axios.put(`http://localhost:5000/api/v1/todo/${id}`, { title: newText })  
+    axios.put(`/api/v1/todo/${id}`, { title: newText })  
       .then((response) => {
         const updatedTodos = todos.map((todo) =>
           todo.id === id ? response.data : todo
@@ -42,7 +42,7 @@ const App = () => {
   };
 
   const deleteTodo = (id) => {
-    axios.delete(`http://localhost:5000/api/v1/todo/${id}`)  
+    axios.delete(`/api/v1/todo/${id}`)  
       .then(() => {
         setTodos(todos.filter((todo) => todo.id !== id));
       })
