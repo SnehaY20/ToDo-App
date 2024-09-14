@@ -1,5 +1,5 @@
-const asyncHandler = require('../middleware/async');
-const Todo = require('../models/todo');
+const asyncHandler = require("../middleware/async");
+const Todo = require("../models/todo");
 
 // @desc    Get all tasks
 // @route   GET /api/v1/todo
@@ -23,7 +23,7 @@ exports.addTodo = asyncHandler(async (req, res) => {
 // @access  Public
 exports.updateTodo = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { title } = req.body;  
+  const { title } = req.body;
 
   const todo = await Todo.findByPk(id);
   if (!todo) {
@@ -31,11 +31,11 @@ exports.updateTodo = asyncHandler(async (req, res) => {
   }
 
   if (title !== undefined) {
-    todo.title = title; 
+    todo.title = title;
   }
 
   await todo.save();
-  
+
   res.json(todo);
 });
 
@@ -44,6 +44,17 @@ exports.updateTodo = asyncHandler(async (req, res) => {
 // @access  Public
 exports.deleteTodo = asyncHandler(async (req, res) => {
   const { id } = req.params;
+
   await Todo.destroy({ where: { id } });
-  res.json({ message: 'Todo deleted' });
+  res.json({ message: "Todo deleted" });
+});
+
+// @desc    Delete a task
+// @route   DELETE /api/v1/todo/delete/all
+// @access  Public
+exports.deleteAllTodo = asyncHandler(async (req, res) => {
+  await Todo.destroy({
+    truncate: true
+  });
+  res.json({ message: "Todo deleted" });
 });
