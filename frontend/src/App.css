@@ -1,0 +1,128 @@
+/* Basic styling for the whole app */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #E6E6FA, #9370DB); /* Pastel lavender to purple gradient */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #8B4513; /* Brown for the Todo App title */
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #C0C0C0; /* Silver input box */
+  background-color: #F8F8F8; /* Slight background change to mimic silver look */
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+.todo-input button {
+  background-color: #98FB98; /* Pastel green for the plus button */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-input button:hover {
+  background-color: #77DD77; /* Slightly darker pastel green on hover */
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.todo-item span {
+  flex: 1;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-actions svg {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.todo-actions .edit-icon {
+  color: #ADD8E6; /* Light blue for the edit button */
+}
+
+.todo-actions .edit-icon:hover {
+  color: #87CEFA; /* Slightly darker light blue on hover */
+}
+
+.todo-actions .delete-icon {
+  color: #ff1744;
+}
+
+.todo-actions .delete-icon:hover {
+  color: #ff7961;
+}
+
+.clear-btn {
+  background-color: #6200ea;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.clear-btn:hover {
+  background-color: #3700b3;
+}
+
+.todo-footer {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #00008B; /* Dark blue for the pending tasks sentence */
+}
+
+.todo-item input {
+  flex: 1;
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
